@@ -1,4 +1,31 @@
-  def story_space_adventure():
+import time
+
+def get_words_from_user(prompts):
+    """
+    A helper function to get a dictionary of words from the user.
+    Args:
+        prompts (list): A list of strings, where each string is a prompt for a word.
+    Returns:
+        dict: A dictionary where keys are the prompts and values are the user's input.
+    """
+    user_words = {}
+    print("\nPlease provide the following words:")
+    for prompt in prompts:
+        key = prompt.lower().replace(" ", "_").replace(":", "")
+        # BUG FIX: Add a loop to ensure the user provides a non-empty word.
+        while True:
+            user_input = input(f"{prompt}: ")
+            if user_input.strip(): # Check if the input is not just whitespace
+                user_words[key] = user_input
+                break
+            else:
+                print("Please enter a word.")
+    return user_words
+
+
+
+
+def story_space_adventure():
     """Runs the Space Adventure themed Mad Libs story."""
     print("\n--- Story 1: A Day in Outer Space ---")
     prompts = [
