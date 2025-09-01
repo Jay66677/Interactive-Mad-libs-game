@@ -150,7 +150,7 @@ def main():
         print("5. The Detective's Case")
         print("6. Quit")
 
-        choice = input("Enter your choice (1-6): ")
+        choice = input("Enter your choice (1-6): ").lower() #BUG fix 1
 
         if choice == '1':
             story_space_adventure()
@@ -162,7 +162,7 @@ def main():
             story_pirate_adventure()
         elif choice == '5':
             story_detective_mystery()
-        elif choice == '6':
+        elif choice in ['6','q']:   #BUG fix 1
             print("Thanks for playing! Goodbye.")
             break
         else:
