@@ -109,3 +109,40 @@ def story_detective_mystery():
     )
     print(story)
 
+
+def main():
+    """Main function to run the Mad Libs game."""
+    print("--- Welcome to Interactive Mad Libs! ---")
+    
+    while True:
+        print("\nChoose a story to play:")
+        print("1. A Day in Outer Space")
+        print("2. The Quest for the Lost Scepter")
+        print("3. A Very Strange School Day")
+        print("4. The Pirate's Treasure")
+        print("5. The Detective's Case")
+        print("6. Quit")
+
+        choice = input("Enter your choice (1-6): ")
+
+        if choice == '1':
+            story_space_adventure()
+        elif choice == '2':
+            story_castle_quest()
+        elif choice == '3':
+            story_school_day()
+        elif choice == '4':
+            story_pirate_adventure()
+        elif choice == '5':
+            story_detective_mystery()
+        elif choice == '6':
+            print("Thanks for playing! Goodbye.")
+            break
+        else:
+            print("Invalid choice. Please enter a number between 1 and 6.")
+        
+        time.sleep(2) # Pause for a moment before showing the menu again
+
+if __name__ == "__main__":
+    main()
+
